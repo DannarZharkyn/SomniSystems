@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Somni QR Code</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: var(--mist);
+      }
+
+      .qr-shell {
+        width: min(560px, 100%);
+        padding: clamp(22px, 5vw, 36px);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .qr-shell h1 {
+        margin-bottom: 10px;
+        color: var(--ink);
+        font-size: clamp(2rem, 8vw, 3.4rem);
+        line-height: 1;
+      }
+
+      .qr-shell p {
+        color: var(--muted);
+      }
+
+      .qr-form {
+        display: grid;
+        gap: 12px;
+        margin: 24px 0;
+      }
+
+      .qr-form label {
+        font-size: 0.88rem;
+        font-weight: 760;
+      }
+
+      .qr-form input {
+        width: 100%;
+        min-height: 48px;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--ink);
+        font: inherit;
+      }
+
+      .qr-preview {
+        display: grid;
+        place-items: center;
+        min-height: 280px;
+        margin-top: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .qr-preview img {
+        width: min(240px, 78vw);
+        height: auto;
+        image-rendering: pixelated;
+      }
+
+      .qr-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .qr-actions .button.primary {
+        color: var(--white);
+        background: var(--night);
+      }
+
+      .qr-actions .button.secondary {
+        color: var(--night);
+        border-color: var(--line);
+        background: var(--white);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="qr-shell">
+      <p class="section-label">QR code</p>
+      <h1>Somni link</h1>
+      <p>Paste the public website URL here, then download the generated QR code for print, signs, or sharing.</p>
+
+      <form class="qr-form" id="qr-form">
+        <label for="site-url">Website URL</label>
+        <input id="site-url" name="site-url" type="url" placeholder="https://your-somni-site.com" required>
+        <div class="qr-actions">
+          <button class="button primary" type="submit">Generate</button>
+          <a class="button secondary" href="index.html">Back to site</a>
+        </div>
+      </form>
+
+      <div class="qr-preview" id="qr-preview" aria-live="polite">
+        <p>Your QR code will appear here.</p>
+      </div>
+    </main>
+
+    <script src="qr.js"></script>
+  </body>
+</html>
