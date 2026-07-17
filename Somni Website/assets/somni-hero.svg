@@ -1,38 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Calm bedside technology scene</title>
-  <desc id="desc">A quiet pre-dawn room with a glowing bedside object and soft flowing light.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 760" role="img" aria-labelledby="title desc">
+  <title id="title">Adjustable pillow in a calm bedroom</title>
+  <desc id="desc">A soft white pillow with adjustable layers rests on a light bed beneath a peaceful blue and cream wall.</desc>
   <defs>
-    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#122321"/>
-      <stop offset="0.46" stop-color="#24413c"/>
-      <stop offset="1" stop-color="#e4a071"/>
-    </linearGradient>
-    <linearGradient id="sheet" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0" stop-color="#f7f1e6"/>
-      <stop offset="1" stop-color="#c8d8cf"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="64%" cy="42%" r="42%">
-      <stop offset="0" stop-color="#fff5d6" stop-opacity="0.95"/>
-      <stop offset="0.28" stop-color="#f4b77a" stop-opacity="0.46"/>
-      <stop offset="1" stop-color="#f4b77a" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="blur">
-      <feGaussianBlur stdDeviation="18"/>
-    </filter>
+    <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9f5f7"/><stop offset="1" stop-color="#f7f1e5"/></linearGradient>
+    <linearGradient id="bed" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#e7f1ec"/></linearGradient>
+    <linearGradient id="pillow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#d9eae5"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#617d78" flood-opacity=".18"/></filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="26"/></filter>
   </defs>
-  <rect width="1600" height="1000" fill="url(#wall)"/>
-  <rect y="650" width="1600" height="350" fill="url(#sheet)"/>
-  <path d="M0 725 C210 668 374 716 540 680 C764 632 916 566 1166 620 C1348 660 1460 724 1600 690 L1600 1000 L0 1000 Z" fill="#eef1e8" opacity="0.84"/>
-  <path d="M0 820 C240 760 404 826 614 782 C858 730 1018 784 1218 736 C1398 692 1490 714 1600 760 L1600 1000 L0 1000 Z" fill="#aabeb4" opacity="0.45"/>
-  <ellipse cx="1010" cy="494" rx="390" ry="280" fill="url(#glow)" filter="url(#blur)"/>
-  <rect x="950" y="520" width="270" height="54" rx="27" fill="#0f1d1b" opacity="0.68"/>
-  <rect x="994" y="408" width="178" height="128" rx="42" fill="#f3b172"/>
-  <rect x="1026" y="438" width="114" height="52" rx="26" fill="#fff4d5" opacity="0.88"/>
-  <path d="M474 452 C620 342 742 374 900 442 C1018 492 1128 488 1238 410" fill="none" stroke="#d7f0e7" stroke-width="18" stroke-linecap="round" opacity="0.52"/>
-  <path d="M560 530 C716 448 834 482 990 542 C1116 590 1254 564 1396 456" fill="none" stroke="#f8cf9d" stroke-width="12" stroke-linecap="round" opacity="0.58"/>
-  <path d="M660 360 C808 270 1004 332 1112 256" fill="none" stroke="#eaf8f1" stroke-width="8" stroke-linecap="round" opacity="0.36"/>
-  <circle cx="1240" cy="350" r="8" fill="#fff4d5" opacity="0.86"/>
-  <circle cx="1318" cy="430" r="5" fill="#d7f0e7" opacity="0.74"/>
-  <circle cx="852" cy="302" r="6" fill="#f8cf9d" opacity="0.7"/>
-  <circle cx="744" cy="462" r="4" fill="#fff4d5" opacity="0.7"/>
+  <rect width="800" height="760" fill="url(#wall)"/>
+  <circle cx="650" cy="132" r="115" fill="#fff" opacity=".46" filter="url(#soft)"/>
+  <path d="M0 485C142 432 235 466 363 445c161-27 284-19 437 47v268H0Z" fill="url(#bed)"/>
+  <path d="M0 598c142-55 277-32 391-55 140-29 279-16 409 36v181H0Z" fill="#dcece6" opacity=".62"/>
+  <g opacity=".65">
+    <path d="M96 104v285" stroke="#fff" stroke-width="8"/>
+    <path d="M112 97h92v292" fill="none" stroke="#fff" stroke-width="5"/>
+    <path d="M600 78v266M618 73h92v278" fill="none" stroke="#fff" stroke-width="6"/>
+  </g>
+  <g transform="translate(115 278)" filter="url(#shadow)">
+    <path d="M39 139c26-59 81-94 152-88 92 8 163 5 245-5 67-8 119 27 132 87 11 53-22 107-77 116-103 18-277 19-385 5-60-8-91-62-67-115Z" fill="url(#pillow)"/>
+    <path d="M52 155c74 29 156 27 243 16 92-12 171-6 257 5" fill="none" stroke="#bcd9d0" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+    <path d="M95 205c124 19 292 15 410-2" fill="none" stroke="#eef5f2" stroke-width="18" stroke-linecap="round"/>
+    <ellipse cx="294" cy="95" rx="103" ry="24" fill="#f6faf8" opacity=".92"/>
+  </g>
+  <g fill="none" stroke="#7eaaa2" stroke-width="5" stroke-linecap="round" opacity=".72">
+    <path d="M336 267v-42M323 240l13-15 13 15"/>
+    <path d="M336 547v42M323 574l13 15 13-15"/>
+  </g>
+  <path d="M61 667c150-31 264 1 388-18 106-16 195-12 291 13" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".62"/>
 </svg>

@@ -1,0 +1,13 @@
+.git
+.agents
+.codex
+.env*
+.DS_Store
+project
+qr.html
+qr.js
+new.py
+requirements.txt
+GITHUB_PAGES_SETUP.md
+github-pages-root-index.html
+README.md
