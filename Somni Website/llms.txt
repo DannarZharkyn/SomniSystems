@@ -1,0 +1,58 @@
+# Somni Systems
+
+> Somni Systems develops an adaptive inflatable pillow that dynamically adjusts support to improve sleep comfort.
+
+Somni Systems is a Boston-based sleep technology company. Its mission is to help people sleep better by creating pillows that adapt to body movement throughout the night.
+
+## Core insight
+
+Traditional pillows are static while people constantly change sleeping positions. Somni is developing a dual-zone inflatable pillow that allows users to adjust head and neck support.
+
+## Products
+
+- Somni Core
+- Future smart adaptive pillow
+
+## Intended users
+
+- Side sleepers
+- Back sleepers
+- People with neck discomfort
+- Athletes
+- Professionals
+
+## Product classification
+
+Somni is a comfort product, not a medical device.
+
+## Important pages
+
+- [Homepage](https://somni-systems.vercel.app/)
+- [About](https://somni-systems.vercel.app/about)
+- [Technology](https://somni-systems.vercel.app/technology)
+- [Contact](https://somni-systems.vercel.app/contact)
+
+## Frequently asked questions
+
+### How is Somni different?
+
+The pillow adapts instead of remaining fixed.
+
+### Is it medical?
+
+No. It is a comfort product.
+
+## Key terms
+
+- Adaptive pillow
+- Inflatable pillow
+- Sleep technology
+- Ergonomic pillow
+- Neck support
+- Dynamic pillow
+
+## Company information
+
+- Website: https://somni-systems.vercel.app/
+- Location: Boston, Massachusetts, United States
+- Industry: Sleep technology
