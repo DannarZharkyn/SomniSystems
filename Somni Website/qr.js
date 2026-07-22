@@ -3,7 +3,7 @@ const input = document.querySelector("#site-url");
 const preview = document.querySelector("#qr-preview");
 
 const params = new URLSearchParams(window.location.search);
-const initialUrl = params.get("url");
+const initialUrl = params.get("url") || "https://somni-systems.vercel.app/";
 
 if (initialUrl) {
   input.value = initialUrl;
