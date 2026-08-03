@@ -21,7 +21,7 @@ function resetModal() {
   firstNameInput.removeAttribute('aria-invalid');
   emailInput.removeAttribute('aria-invalid');
   submitButton.disabled = false;
-  submitButton.textContent = 'Join the waitlist';
+  submitButton.textContent = 'Join Somni';
 }
 
 function openModal() {
@@ -88,7 +88,7 @@ form.addEventListener('submit', async (event) => {
   if (!validate()) return;
 
   submitButton.disabled = true;
-  submitButton.textContent = 'Joining…';
+    submitButton.textContent = 'Joining Somni…';
 
   try {
     const response = await fetch('/api/waitlist', {
@@ -110,7 +110,7 @@ form.addEventListener('submit', async (event) => {
   } catch (error) {
     submitError.textContent = error.message;
     submitButton.disabled = false;
-    submitButton.textContent = 'Join the waitlist';
+    submitButton.textContent = 'Join Somni';
   }
 });
 

@@ -3,227 +3,240 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Your body isn't static. Your pillow shouldn't be either. Somni is building an adjustable pillow designed around bodies in motion.">
-    <meta name="theme-color" content="#f7faf7">
-    <title>Somni Systems | Your body isn't static</title>
-    <link rel="preload" href="assets/somni-hero.svg" as="image" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <title>Somni Systems | Adaptive Pillow Height and Support</title>
+    <meta name="description" content="Somni Systems is building AXIS Core and AXIS Smart in Boston. Follow the journey toward a pillow with adjustable height and personalized support.">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="theme-color" content="#071b3b">
+    <link rel="canonical" href="https://somni-systems.vercel.app/Somni%20Website/">
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/somni-hero-v2.png" as="image" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=5">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Somni Systems">
+    <meta property="og:title" content="Somni Systems: Your body is not static. Your pillow should not be either.">
+    <meta property="og:description" content="Follow the Somni journey as one lived experience becomes a more adaptive vision for sleep comfort.">
+    <meta property="og:url" content="https://somni-systems.vercel.app/Somni%20Website/">
+    <meta property="og:image" content="https://somni-systems.vercel.app/Somni%20Website/assets/somni-hero-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://somni-systems.vercel.app/Somni%20Website/#organization",
+            "name": "Somni Systems",
+            "url": "https://somni-systems.vercel.app/Somni%20Website/",
+            "description": "Boston based student team exploring adaptive pillow height and personalized support through the AXIS platform.",
+            "areaServed": "United States",
+            "knowsAbout": ["adjustable pillows", "sleep technology", "personalized support", "sleep comfort"]
+          },
+          {
+            "@type": "Product",
+            "@id": "https://somni-systems.vercel.app/Somni%20Website/#axis-core",
+            "name": "AXIS Core",
+            "brand": {"@id": "https://somni-systems.vercel.app/Somni%20Website/#organization"},
+            "category": "Precision adjustable pillow",
+            "description": "A pillow concept in development, designed to make personalized support simple and approachable.",
+            "audience": {"@type": "Audience", "audienceType": "People seeking adjustable sleep comfort"}
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {"@type":"Question","name":"What changes?","acceptedAnswer":{"@type":"Answer","text":"AXIS is designed to personalize pillow height and support."}},
+              {"@type":"Question","name":"Core or Smart?","acceptedAnswer":{"@type":"Answer","text":"AXIS Core is the manual concept Somni is focused on now. AXIS Smart is the future responsive plan."}},
+              {"@type":"Question","name":"Can I buy it?","acceptedAnswer":{"@type":"Answer","text":"Not yet. Visitors can join Somni for progress updates and future opportunities to participate."}},
+              {"@type":"Question","name":"Is it medical?","acceptedAnswer":{"@type":"Answer","text":"No. AXIS is a sleep comfort product in development, not a medical device or treatment."}}
+            ]
+          }
+        ]
+      }
+    </script>
     <script src="script.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Somni Systems home">
-        <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
-          <path d="M9 24c4-8 11-12 20-12 3 0 5 .4 7 1.2-4.6 2.1-8.1 5.7-10.4 10.8-2.5 5.5-7.1 8.3-13.6 8.3H8.5C7.5 29.5 7.7 26.8 9 24Z"/>
-          <path d="M15 25c4.2-2.8 8.9-3.5 14-2.2"/>
-        </svg>
-        <span>Somni Systems</span>
-      </a>
-
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header light-header">
+      <a class="header-wordmark" href="#top" aria-label="Somni Systems home"><span class="wave-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>SOMNI</strong><small>SYSTEMS</small></a>
       <nav aria-label="Primary navigation">
-        <a href="#problem">Why Somni</a>
-        <a href="#solution">Our approach</a>
-        <a href="#journey">Journey</a>
+        <a href="#story">Our story</a>
+        <a href="#platform">What we're exploring</a>
+        <a href="#journey">The journey</a>
+        <a href="#faq">FAQ</a>
       </nav>
-
-      <button class="button button-small button-secondary header-cta" type="button" data-open-waitlist>
-        Join the waitlist
-      </button>
+      <button class="button button-small button-outline" type="button" data-open-waitlist>Join Somni</button>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-glow hero-glow-blue" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow-green" aria-hidden="true"></div>
-        <div class="container hero-layout">
-          <div class="hero-copy">
-            <p class="eyebrow"><span></span> Introducing Somni Systems</p>
-            <h1 id="hero-title">
-              <span class="hero-headline-line">Your body</span>
-              <span class="hero-headline-line">isn’t static.</span>
-              <span class="hero-headline-followup">
-                <span class="hero-headline-line">Your pillow</span>
-                <span class="hero-headline-line">shouldn’t be <em>either.</em></span>
-              </span>
-            </h1>
-            <p class="hero-subtext">
-              We move, rotate, and change position throughout the night. Traditional pillows don’t. Somni is building a pillow designed to adapt—not force you to.
-            </p>
-            <div class="hero-actions">
-              <button class="button button-primary" type="button" data-open-waitlist>Join the waitlist</button>
-              <a class="text-link" href="#problem">See the mismatch <span aria-hidden="true">↓</span></a>
-            </div>
-            <p class="quiet-note">Early access to prototype news, user testing, and launch updates.</p>
+    <main id="main">
+      <section class="hero hero-editorial" id="top" aria-labelledby="hero-title">
+        <img class="hero-background" src="assets/somni-hero-v2.png" alt="Somni adjustable pillow concept with a blue manual adjustment dial.">
+        <div class="container hero-editorial-content">
+          <img class="hero-logo" src="assets/somni-logo.png" alt="Somni Systems. Adaptive Sleep Solutions.">
+          <p class="location-chip">Built in Boston <span>•</span> Innovate@BU</p>
+          <h1 id="hero-title">Your body is not static.<br><em>Your pillow should not be either.</em></h1>
+          <p class="hero-subtext">We are building a pillow platform designed to personalize <strong>height</strong> and <strong>support</strong> as your needs change.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-open-waitlist>Join Somni</button>
+            <a class="text-link" href="#story">Follow the journey</a>
           </div>
-
-          <div class="hero-visual" aria-label="A soft, adjustable pillow concept in a calm bedroom setting">
-            <div class="visual-card">
-              <img src="assets/somni-hero.svg" alt="Soft adjustable pillow layers in a calm, light bedroom.">
-              <div class="adjustment-note">
-                <span class="adjustment-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24"><path d="M12 3v18M8 7l4-4 4 4M8 17l4 4 4-4"/></svg>
-                </span>
-                <span><strong>Adaptive by design</strong><small>Adjustable height &amp; support</small></span>
-              </div>
-            </div>
-            <div class="comfort-pill"><span aria-hidden="true">✓</span> Stop compensating</div>
+          <div class="hero-proof" aria-label="Somni Systems progress">
+            <div><strong>50+</strong><span>conversations</span></div>
+            <div><strong>2</strong><span>AXIS concepts</span></div>
+            <div><strong>Boston</strong><span>where we are building</span></div>
           </div>
         </div>
       </section>
 
-      <section id="problem" class="section problem-section" aria-labelledby="problem-title">
-        <div class="container split-layout">
-          <div class="section-intro">
-            <p class="section-label">The mismatch</p>
-            <h2 id="problem-title">Traditional pillows stay the same. Your body doesn’t.</h2>
-          </div>
-          <div class="problem-copy">
-            <p class="lead">So you do the adapting.</p>
-            <p>Stacking. Folding. Flipping. Buying another pillow and hoping it works. We treat these workarounds as normal because the pillow itself cannot respond when our position—and the support we want—changes.</p>
-            <div class="support-spectrum" aria-label="From static support to adaptive support">
-              <span>Static</span>
-              <div class="spectrum-line"><i></i><i></i><i></i></div>
-              <span>Adaptive</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="solution" class="section solution-section" aria-labelledby="solution-title">
-        <div class="container solution-layout">
-          <div class="solution-visual" aria-hidden="true">
-            <div class="layer layer-top"><span>Soft comfort layer</span></div>
-            <div class="layer layer-mid"><span>Adjustable support</span></div>
-            <div class="layer layer-base"><span>Stable foundation</span></div>
-          </div>
-          <div class="section-intro solution-copy">
-            <p class="section-label">Meet Somni</p>
-            <h2 id="solution-title">The pillow should do the adapting.</h2>
-            <p>Somni is an adjustable pillow concept built around a simple principle: support should be able to change when your body does.</p>
-            <ul class="benefit-list">
-              <li><span aria-hidden="true">✓</span> Change the height and support</li>
-              <li><span aria-hidden="true">✓</span> Reconfigure it as your needs change</li>
-              <li><span aria-hidden="true">✓</span> Replace workarounds with one system</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section why-section" aria-labelledby="why-title">
-        <div class="container why-panel">
-          <div class="why-copy">
-            <p class="section-label">Why trust the idea</p>
-            <h2 id="why-title">Built from the workaround backward.</h2>
-            <p>We’re not starting with another pillow and inventing a story around it. We’re starting with the behavior: how people stack, fold, replace, and reshape their pillows. Customer interviews, physical therapist conversations, prototypes, and user testing are turning that insight into a product.</p>
-          </div>
-          <blockquote>
-            <span aria-hidden="true">“</span>
-            <p>Pillows should adapt to our bodies, not the other way around.</p>
-          </blockquote>
-        </div>
-      </section>
-
-      <section id="journey" class="section journey-section" aria-labelledby="journey-title">
+      <section class="section mismatch-section" aria-labelledby="problem-title">
         <div class="container">
-          <div class="journey-heading">
-            <div class="section-intro">
-              <p class="section-label">From insight to product</p>
-              <h2 id="journey-title">Prove the problem. Build the response.</h2>
-            </div>
-            <p>Every step asks the same question: can the pillow adapt so the person doesn’t have to?</p>
+          <div class="mismatch-heading">
+            <p class="section-label">The mismatch</p>
+            <h2 id="problem-title">Your sleep position changes.<br>Your pillow height does not.</h2>
+            <p>Adults in one field study changed sleep position an average of <strong>1.6 times each hour</strong>. Most pillows keep one fixed profile all night.</p>
           </div>
+          <div class="numbers-grid">
+            <article><strong>1.6×</strong><h3>Position shifts each hour</h3><p>Support needs can change when you move from your back to your side.</p></article>
+            <article><strong>203M</strong><h3>People with neck pain</h3><p>Estimated worldwide in 2020. Neck pain has many causes and is not attributed to pillows alone.</p></article>
+            <article><strong>50+</strong><h3>People we have heard from</h3><p>Stacking, folding, flipping, and replacing came up again and again.</p></article>
+          </div>
+          <div class="identify-panel">
+            <p class="identify-kicker">Does this sound familiar?</p>
+            <div class="identify-grid">
+              <span>You stack pillows for height.</span>
+              <span>You fold your pillow for support.</span>
+              <span>You wake up with neck stiffness.</span>
+              <span>You keep buying a better fit.</span>
+            </div>
+          </div>
+          <p class="source-note">Sources: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5677378/" target="_blank" rel="noopener">sleep position study</a> and <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10897950/" target="_blank" rel="noopener">Global Burden of Disease 2021 neck pain analysis</a>.</p>
+        </div>
+      </section>
 
-          <div class="journey-grid">
-            <article class="journey-card">
-              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17V7l8-4 8 4v10l-8 4-8-4ZM4 7l8 4 8-4M12 11v10"/></svg></div>
-              <span>01</span>
-              <h3>Observe the workaround</h3>
-              <p>Understand when and why people stack, fold, flip, and replace their pillows.</p>
+      <section class="section story-section" id="story" aria-labelledby="story-title">
+        <div class="container story-layout">
+          <figure class="story-photo">
+            <img src="assets/ana-story.jpg" alt="Ana Theodora Balaci, part of the Somni Systems team.">
+            <figcaption><span>June 2025</span> Where the Somni story began</figcaption>
+          </figure>
+          <div class="section-heading story-copy">
+            <p class="section-label">How it all started</p>
+            <h2 id="story-title">Recovery made the problem impossible to ignore.</h2>
+            <div class="story-question">Why did support disappear every time Ana changed position?</div>
+            <p>During surgical recovery in June 2025, Ana struggled to find a pillow that supported both her neck and the way she actually slept.</p>
+            <div class="story-question">Why was adjustment so much work?</div>
+            <p>The available options stayed fixed or required removing and rearranging fill. Neither felt natural for everyday use.</p>
+            <div class="story-question">Could a pillow adapt instead?</div>
+            <p>At Boston University, Ana and Dannar turned that question into Somni. The team joined the Innovate@BU accelerator and began listening, prototyping, and learning.</p>
+            <div class="story-status"><strong>One lived problem.</strong><span>50+ conversations.</span><span>One idea worth testing.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section platform-section" id="platform" aria-labelledby="platform-title">
+        <div class="container">
+          <div class="section-heading centered">
+            <p class="section-label">What we are exploring</p>
+            <h2 id="platform-title">AXIS Core now. AXIS Smart next.</h2>
+            <p>Two approaches to personalized pillow height and support.</p>
+          </div>
+          <img class="axis-comparison-image" src="assets/axis-core-smart-v2.png" alt="AXIS Core with a manual dial beside the future AXIS Smart concept.">
+          <div class="product-grid">
+            <article class="product-card product-core">
+              <div class="product-kicker"><span>Current focus</span><b>01</b></div>
+              <h3>AXIS <em>Core</em></h3>
+              <p>Manual adjustment for people who want direct control without opening the pillow or rearranging fill.</p>
+              <ul><li>Adjustable height</li><li>Adjustable support</li><li>Simple manual control</li></ul>
             </article>
-            <article class="journey-card">
-              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM19 8v6M16 11h6"/></svg></div>
-              <span>02</span>
-              <h3>Build the mechanism</h3>
-              <p>Turn adjustable-support ideas into tangible pillow prototypes.</p>
-            </article>
-            <article class="journey-card">
-              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3v-7a4 4 0 0 1-1-2.7V7a4 4 0 0 1 4-4h11a4 4 0 0 1 4 4v8Z"/></svg></div>
-              <span>03</span>
-              <h3>Test the experience</h3>
-              <p>Learn whether adjustment feels clear, useful, and natural in real life.</p>
-            </article>
-            <article class="journey-card">
-              <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11Z"/></svg></div>
-              <span>04</span>
-              <h3>Challenge the assumptions</h3>
-              <p>Use customer and physical therapist feedback to question and refine each decision.</p>
+            <article class="product-card product-smart">
+              <div class="product-kicker"><span>Future plan</span><b>02</b></div>
+              <h3>AXIS <em>Smart</em></h3>
+              <p>A future responsive concept designed to adapt support as sleep position and comfort needs change.</p>
+              <ul><li>Automatic adjustment</li><li>Position responsive support</li><li>Personalized insights</li></ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="waitlist" class="section waitlist-section" aria-labelledby="waitlist-title">
-        <div class="container waitlist-panel">
-          <div class="waitlist-orb waitlist-orb-one" aria-hidden="true"></div>
-          <div class="waitlist-orb waitlist-orb-two" aria-hidden="true"></div>
-          <div class="waitlist-content">
-            <p class="section-label">Early access</p>
-            <h2 id="waitlist-title">Stop adapting to your pillow.</h2>
-            <p>Follow Somni as we turn a familiar workaround into a fundamentally different kind of pillow.</p>
-            <button class="button button-primary" type="button" data-open-waitlist>Join the waitlist</button>
-            <small>No spam. Just thoughtful updates from Somni.</small>
+      <section class="section evidence-section" id="journey" aria-labelledby="evidence-title">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div><p class="section-label">Follow the journey</p><h2 id="evidence-title">From one question to something we can hold.</h2></div>
+            <p>We are sharing the path from lived experience to a product people can one day welcome into their bedrooms.</p>
           </div>
+          <div class="evidence-grid">
+            <article><span>01</span><h3>Notice the problem</h3><strong>Jun '25</strong><p>A difficult recovery reveals how little most pillows can change with the person using them.</p></article>
+            <article><span>02</span><h3>Listen widely</h3><strong>50+</strong><p>Conversations show how common stacking, folding, and searching really are.</p></article>
+            <article><span>03</span><h3>Make it tangible</h3><strong>Now</strong><p>Sketches and early prototypes are turning the idea into something that can be seen, touched, and questioned.</p></article>
+            <article><span>04</span><h3>Shape it together</h3><strong>Next</strong><p>Future feedback and testing will help Somni become simpler, more useful, and more human.</p></article>
+          </div>
+          <p class="evidence-note"><strong>Where we are:</strong> AXIS is an early concept in development and is not available for sale. Somni is a comfort exploration, not a medical device or treatment.</p>
+        </div>
+      </section>
+
+      <section class="section team-section" aria-labelledby="team-title">
+        <div class="container">
+          <div class="team-intro">
+            <div class="section-heading"><p class="section-label">Built in Boston</p><h2 id="team-title">Systems engineers at Boston University.</h2><p>Somni brings together product strategy, systems research, integrated prototyping, and a shared habit of asking better questions.</p><div class="accelerator-badge">Part of the Innovate@BU accelerator</div></div>
+            <figure class="team-photo"><img src="assets/somni-team.jpg" alt="Ana Theodora Balaci and Dannar Zharkyn, the Somni Systems team."><figcaption>The Somni Systems team in Boston</figcaption></figure>
+          </div>
+          <div class="team-grid">
+            <article><div class="avatar">AB</div><div><h3>Ana Theodora Balaci</h3><p>Product and Strategy</p><span>Systems Engineering PhD researcher at BU. Product architecture, product management, consulting, and venture initiatives.</span></div></article>
+            <article><div class="avatar">DZ</div><div><h3>Dannar Zharkyn</h3><p>Systems and Engineering</p><span>Systems Engineering PhD researcher at BU. Integrated prototypes across hardware, software, and interaction.</span></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="container faq-layout">
+          <div class="section-heading"><p class="section-label">Quick answers</p><h2 id="faq-title">What is Somni?</h2><p>Short answers as we keep building.</p></div>
+          <div class="faq-list">
+            <details open><summary>What changes?<span>+</span></summary><p>AXIS is designed to personalize pillow height and support.</p></details>
+            <details><summary>Core or Smart?<span>+</span></summary><p>AXIS Core is the manual concept we are focused on now. AXIS Smart is the future responsive plan.</p></details>
+            <details><summary>Can I buy it?<span>+</span></summary><p>Not yet. Join Somni for progress updates and future opportunities to participate.</p></details>
+            <details><summary>Is it medical?<span>+</span></summary><p>No. AXIS is a sleep comfort product in development, not a medical device or treatment.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section waitlist-section" id="waitlist" aria-labelledby="waitlist-title">
+        <div class="container waitlist-panel">
+          <div class="waitlist-grid" aria-hidden="true"></div>
+          <p class="section-label">Come along with us</p>
+          <h2 id="waitlist-title">The Somni story is just beginning.</h2>
+          <p>Follow the journey, see ideas become prototypes, and hear when there are opportunities to shape what comes next.</p>
+          <button class="button button-primary button-white" type="button" data-open-waitlist>Join Somni <span aria-hidden="true">↗</span></button>
+          <small>No spam. Just thoughtful updates from the Somni journey.</small>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <a class="brand" href="#top" aria-label="Somni Systems home">
-          <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M9 24c4-8 11-12 20-12 3 0 5 .4 7 1.2-4.6 2.1-8.1 5.7-10.4 10.8-2.5 5.5-7.1 8.3-13.6 8.3H8.5C7.5 29.5 7.7 26.8 9 24Z"/><path d="M15 25c4.2-2.8 8.9-3.5 14-2.2"/></svg>
-          <span>Somni Systems</span>
-        </a>
-        <p>Your body isn’t static. Your pillow shouldn’t be either.</p>
-        <p>© <span id="current-year">2026</span> Somni Systems</p>
+      <div class="container footer-top">
+        <a class="header-wordmark footer-wordmark" href="#top" aria-label="Somni Systems home"><span class="wave-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>SOMNI</strong><small>SYSTEMS</small></a>
+        <p>Adaptive sleep solutions.<br>Designed in Boston.</p>
+        <div><a href="#story">Our story</a><a href="#journey">Journey</a><a href="#faq">FAQ</a></div>
       </div>
+      <div class="container footer-bottom"><p>© <span id="current-year">2026</span> Somni Systems</p><p>AXIS is a comfort product in development, not a medical device.</p></div>
     </footer>
 
     <dialog class="waitlist-modal" id="waitlist-modal" aria-labelledby="modal-title">
       <div class="modal-shell">
         <button class="modal-close" type="button" aria-label="Close waitlist form" data-close-modal>×</button>
-        <div class="modal-icon" aria-hidden="true">☾</div>
+        <div class="modal-icon" aria-hidden="true">↕</div>
         <div id="modal-form-view">
-          <p class="section-label">Early access</p>
-          <h2 id="modal-title">See what comes after the static pillow.</h2>
-          <p class="modal-intro">Get prototype updates, testing opportunities, and an early look at Somni.</p>
-
+          <p class="section-label">Join Somni</p>
+          <h2 id="modal-title">Follow what comes next.</h2>
+          <p class="modal-intro">Get thoughtful journey updates, early looks, and future opportunities to share your perspective.</p>
           <form id="waitlist-form" novalidate>
-            <div class="field">
-              <label for="first-name">First name</label>
-              <input id="first-name" name="firstName" type="text" autocomplete="given-name" maxlength="80" placeholder="Your first name" required>
-              <span class="field-error" id="first-name-error" aria-live="polite"></span>
-            </div>
-            <div class="field">
-              <label for="email">Email address</label>
-              <input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required>
-              <span class="field-error" id="email-error" aria-live="polite"></span>
-            </div>
-            <div class="honeypot" aria-hidden="true">
-              <label for="company">Company</label>
-              <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
-            </div>
-            <button class="button button-primary modal-submit" type="submit">Join the waitlist</button>
+            <div class="field"><label for="first-name">First name</label><input id="first-name" name="firstName" type="text" autocomplete="given-name" maxlength="80" placeholder="Your first name" required><span class="field-error" id="first-name-error" aria-live="polite"></span></div>
+            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required><span class="field-error" id="email-error" aria-live="polite"></span></div>
+            <div class="honeypot" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+            <button class="button button-primary modal-submit" type="submit">Join Somni</button>
             <p class="submit-error" id="submit-error" role="alert"></p>
           </form>
           <p class="privacy-note">Your details are used only for Somni updates and are sent securely to our private waitlist.</p>
         </div>
-
-        <div class="success-view" id="modal-success-view" hidden>
-          <div class="success-check" aria-hidden="true">✓</div>
-          <h2>Thank you — you’re on the Somni waitlist.</h2>
-          <p>We’re glad you’re here. Keep an eye on your inbox for future updates.</p>
-          <button class="button button-secondary" type="button" data-close-modal>Done</button>
-        </div>
+        <div class="success-view" id="modal-success-view" hidden><div class="success-check" aria-hidden="true">✓</div><h2>Welcome to Somni.</h2><p>Thank you for joining us at the beginning.</p><button class="button button-secondary" type="button" data-close-modal>Done</button></div>
       </div>
     </dialog>
   </body>
