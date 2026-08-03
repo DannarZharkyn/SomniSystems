@@ -6,6 +6,9 @@ const firstNameInput = document.querySelector('#first-name');
 const emailInput = document.querySelector('#email');
 const firstNameError = document.querySelector('#first-name-error');
 const emailError = document.querySelector('#email-error');
+const sleepNeedsField = document.querySelector('#sleep-needs-field');
+const sleepNeedsInputs = [...form.querySelectorAll('input[name="sleepNeeds"]')];
+const sleepNeedsError = document.querySelector('#sleep-needs-error');
 const submitError = document.querySelector('#submit-error');
 const submitButton = form.querySelector('button[type="submit"]');
 
@@ -17,9 +20,11 @@ function resetModal() {
   successView.hidden = true;
   firstNameError.textContent = '';
   emailError.textContent = '';
+  sleepNeedsError.textContent = '';
   submitError.textContent = '';
   firstNameInput.removeAttribute('aria-invalid');
   emailInput.removeAttribute('aria-invalid');
+  sleepNeedsField.removeAttribute('aria-invalid');
   submitButton.disabled = false;
   submitButton.textContent = 'Join Somni';
 }
@@ -44,6 +49,15 @@ document.querySelectorAll('[data-close-modal]').forEach((button) => {
   button.addEventListener('click', closeModal);
 });
 
+sleepNeedsInputs.forEach((input) => {
+  input.addEventListener('change', () => {
+    if (sleepNeedsInputs.some((option) => option.checked)) {
+      sleepNeedsError.textContent = '';
+      sleepNeedsField.removeAttribute('aria-invalid');
+    }
+  });
+});
+
 modal.addEventListener('click', (event) => {
   if (event.target === modal) closeModal();
 });
@@ -59,8 +73,10 @@ function validate() {
 
   firstNameError.textContent = '';
   emailError.textContent = '';
+  sleepNeedsError.textContent = '';
   firstNameInput.removeAttribute('aria-invalid');
   emailInput.removeAttribute('aria-invalid');
+  sleepNeedsField.removeAttribute('aria-invalid');
 
   if (!firstName) {
     firstNameError.textContent = 'Please enter your first name.';
@@ -75,6 +91,12 @@ function validate() {
   } else if (!emailPattern.test(email)) {
     emailError.textContent = 'Please enter a valid email address.';
     emailInput.setAttribute('aria-invalid', 'true');
+    valid = false;
+  }
+
+  if (!sleepNeedsInputs.some((input) => input.checked)) {
+    sleepNeedsError.textContent = 'Please select at least one option.';
+    sleepNeedsField.setAttribute('aria-invalid', 'true');
     valid = false;
   }
 
@@ -97,6 +119,7 @@ form.addEventListener('submit', async (event) => {
       body: JSON.stringify({
         firstName: firstNameInput.value.trim(),
         email: emailInput.value.trim(),
+        sleepNeeds: sleepNeedsInputs.filter((input) => input.checked).map((input) => input.value),
         company: form.elements.company.value,
       }),
     });

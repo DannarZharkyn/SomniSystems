@@ -1,5 +1,12 @@
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const APPS_SCRIPT_HOST = 'script.google.com';
+const ALLOWED_SLEEP_NEEDS = new Set([
+  'Wake up with neck or shoulder discomfort',
+  'Not satisfied with the current pillow',
+  'Looking for better sleep quality and comfort',
+  'Exploring new sleep technology',
+  'Actively looking for a new pillow',
+]);
 
 module.exports = async function handler(request, response) {
   if (request.method !== 'POST') {
@@ -10,6 +17,8 @@ module.exports = async function handler(request, response) {
   const firstName = typeof request.body?.firstName === 'string' ? request.body.firstName.trim() : '';
   const email = typeof request.body?.email === 'string' ? request.body.email.trim().toLowerCase() : '';
   const honeypot = typeof request.body?.company === 'string' ? request.body.company.trim() : '';
+  const rawSleepNeeds = Array.isArray(request.body?.sleepNeeds) ? request.body.sleepNeeds : [];
+  const sleepNeeds = [...new Set(rawSleepNeeds.filter((value) => typeof value === 'string' && ALLOWED_SLEEP_NEEDS.has(value)))];
 
   if (honeypot) return response.status(200).json({ success: true });
   if (!firstName) return response.status(400).json({ error: 'First name is required.' });
@@ -17,6 +26,9 @@ module.exports = async function handler(request, response) {
   if (firstName.length > 80) return response.status(400).json({ error: 'First name is too long.' });
   if (email.length > 254 || !EMAIL_PATTERN.test(email)) {
     return response.status(400).json({ error: 'Please enter a valid email address.' });
+  }
+  if (rawSleepNeeds.length > ALLOWED_SLEEP_NEEDS.size || sleepNeeds.length !== rawSleepNeeds.length) {
+    return response.status(400).json({ error: 'Please select valid waitlist options.' });
   }
 
   const scriptUrl = process.env.APPS_SCRIPT_URL;
@@ -35,7 +47,13 @@ module.exports = async function handler(request, response) {
     const scriptResponse = await fetch(destination, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({ firstName, email, secret: scriptSecret }),
+      body: JSON.stringify({
+        firstName,
+        email,
+        sleepNeeds,
+        sleepNeedsText: sleepNeeds.join(' | '),
+        secret: scriptSecret,
+      }),
       redirect: 'follow',
       signal: AbortSignal.timeout(10000),
     });
