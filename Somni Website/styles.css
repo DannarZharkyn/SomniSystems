@@ -68,26 +68,26 @@
   .mismatch-heading{text-align:center}
   .mismatch-heading h2,.mismatch-heading>p:last-child{margin-right:auto;margin-left:auto}
   .validation-grid article{text-align:center}
-  .validation-grid p{text-align:justify;text-align-last:center;text-wrap:pretty;hyphens:auto}
+  .validation-grid p{text-align:center;text-wrap:pretty}
   .identify-kicker{text-align:center}
   .identify-grid span{text-align:center}
   .source-note{text-align:center}
   .story-copy>.section-label,.story-copy h2{text-align:center}
-  .story-question{width:100%;margin:19px 0 10px;text-align:center}
-  .story-copy>p:not(.section-label){text-align:justify;text-align-last:center;text-wrap:pretty;hyphens:auto}
+  .story-question{width:fit-content;margin:19px 0 10px;text-align:left}
+  .story-copy>p:not(.section-label){text-align:center;text-wrap:pretty}
   .story-status{justify-content:center}
   .platform-section .product-card h3{text-align:center}
-  .platform-section .product-card>p{text-align:justify;text-align-last:center;text-wrap:pretty;hyphens:auto}
+  .platform-section .product-card>p{text-align:center;text-wrap:pretty}
   .evidence-section .split-heading{text-align:center}
   .evidence-section .split-heading h2,.evidence-section .split-heading>p{margin-right:auto;margin-left:auto}
-  .evidence-section .split-heading>p{text-align:justify;text-align-last:center;text-wrap:pretty;hyphens:auto}
+  .evidence-section .split-heading>p{text-align:center;text-wrap:pretty}
   .evidence-grid article{text-align:center}
-  .evidence-grid p{text-align:justify;text-align-last:center;text-wrap:pretty;hyphens:auto}
+  .evidence-grid p{text-align:center;text-wrap:pretty}
   .evidence-note{text-align:center}
   .team-intro .section-heading{max-width:none;text-align:center}
-  .team-intro .section-heading>p:last-of-type{text-align:justify;text-align-last:center;text-wrap:pretty;hyphens:auto}
+  .team-intro .section-heading>p:last-of-type{text-align:center;text-wrap:pretty}
   .accelerator-badge{margin-right:auto;margin-left:auto}
   .faq-layout>.section-heading{text-align:center}
   .faq-layout>.section-heading>p:last-child{max-width:34ch;margin-right:auto;margin-left:auto}
-  .faq-list details p{text-align:justify;text-align-last:left;text-wrap:pretty;hyphens:auto}
+  .faq-list details p{text-align:center;text-wrap:pretty}
 }
