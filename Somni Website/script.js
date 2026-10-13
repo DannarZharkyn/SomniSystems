@@ -30,7 +30,7 @@ function resetModal() {
   emailInput.removeAttribute('aria-invalid');
   sleepNeedsField.removeAttribute('aria-invalid');
   submitButton.disabled = false;
-  submitButton.textContent = 'Join Somni';
+  submitButton.textContent = 'Join waitlist';
 }
 
 function readStorage(storageName, key) {
@@ -130,7 +130,7 @@ function validate() {
   sleepNeedsField.removeAttribute('aria-invalid');
 
   if (!firstName) {
-    firstNameError.textContent = 'Please enter your first name.';
+    firstNameError.textContent = 'Please enter your name.';
     firstNameInput.setAttribute('aria-invalid', 'true');
     valid = false;
   }
@@ -161,7 +161,7 @@ form.addEventListener('submit', async (event) => {
   if (!validate()) return;
 
   submitButton.disabled = true;
-  submitButton.textContent = 'Joining Somni…';
+    submitButton.textContent = 'Joining waitlist…';
 
   try {
     const response = await fetch('/api/waitlist', {
@@ -187,14 +187,13 @@ form.addEventListener('submit', async (event) => {
   } catch (error) {
     submitError.textContent = error.message;
     submitButton.disabled = false;
-    submitButton.textContent = 'Join Somni';
+    submitButton.textContent = 'Join waitlist';
   }
 });
 
 document.querySelector('#current-year').textContent = new Date().getFullYear();
 
-// First-time visitors see the existing form after the page paints; prior dismissal or signup is respected.
+// Show the invitation after every fresh page load, including after a refresh.
 window.setTimeout(() => {
-  if (!hasJoinedWaitlist() && !hasDismissedThisSession() && !modal.open) openModal();
-  else updateWaitlistButton();
+  if (!modal.open) openModal();
 }, 250);
