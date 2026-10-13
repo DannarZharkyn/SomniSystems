@@ -11,6 +11,10 @@ const sleepNeedsInputs = [...form.querySelectorAll('input[name="sleepNeeds"]')];
 const sleepNeedsError = document.querySelector('#sleep-needs-error');
 const submitError = document.querySelector('#submit-error');
 const submitButton = form.querySelector('button[type="submit"]');
+const waitlistButton = document.querySelector('#waitlist-fab');
+
+const waitlistDismissedKey = 'somniWaitlistDismissed';
+const waitlistJoinedKey = 'somniWaitlistJoined';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -29,20 +33,61 @@ function resetModal() {
   submitButton.textContent = 'Join Somni';
 }
 
+function readStorage(storageName, key) {
+  try {
+    return window[storageName].getItem(key) === 'true';
+  } catch {
+    return false;
+  }
+}
+
+function writeStorage(storageName, key) {
+  try {
+    window[storageName].setItem(key, 'true');
+  } catch {
+    // The experience still works if a browser blocks storage.
+  }
+}
+
+function hasJoinedWaitlist() {
+  return readStorage('localStorage', waitlistJoinedKey);
+}
+
+function hasDismissedThisSession() {
+  return readStorage('sessionStorage', waitlistDismissedKey);
+}
+
+function updateWaitlistButton() {
+  waitlistButton.hidden = hasJoinedWaitlist() || !hasDismissedThisSession() || modal.open;
+}
+
 function openModal() {
+  if (modal.open) return;
   resetModal();
   modal.showModal();
   document.body.classList.add('modal-open');
+  updateWaitlistButton();
   window.setTimeout(() => firstNameInput.focus(), 50);
 }
 
 function closeModal() {
-  modal.close();
+  if (modal.open) modal.close();
   document.body.classList.remove('modal-open');
+  updateWaitlistButton();
+}
+
+function dismissWaitlist() {
+  // A dismissal lasts for this browser session, then exposes the floating reminder.
+  writeStorage('sessionStorage', waitlistDismissedKey);
+  closeModal();
 }
 
 document.querySelectorAll('[data-open-waitlist]').forEach((button) => {
   button.addEventListener('click', openModal);
+});
+
+document.querySelectorAll('[data-dismiss-waitlist]').forEach((button) => {
+  button.addEventListener('click', dismissWaitlist);
 });
 
 document.querySelectorAll('[data-close-modal]').forEach((button) => {
@@ -59,11 +104,17 @@ sleepNeedsInputs.forEach((input) => {
 });
 
 modal.addEventListener('click', (event) => {
-  if (event.target === modal) closeModal();
+  if (event.target === modal) dismissWaitlist();
+});
+
+modal.addEventListener('cancel', (event) => {
+  event.preventDefault();
+  dismissWaitlist();
 });
 
 modal.addEventListener('close', () => {
   document.body.classList.remove('modal-open');
+  updateWaitlistButton();
 });
 
 function validate() {
@@ -110,7 +161,7 @@ form.addEventListener('submit', async (event) => {
   if (!validate()) return;
 
   submitButton.disabled = true;
-    submitButton.textContent = 'Joining Somni…';
+  submitButton.textContent = 'Joining Somni…';
 
   try {
     const response = await fetch('/api/waitlist', {
@@ -127,6 +178,9 @@ form.addEventListener('submit', async (event) => {
     const result = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(result.error || 'We couldn’t add you right now. Please try again.');
 
+    // A confirmed signup persists across visits so the invitation does not auto-open again.
+    writeStorage('localStorage', waitlistJoinedKey);
+    updateWaitlistButton();
     formView.hidden = true;
     successView.hidden = false;
     successView.querySelector('button').focus();
@@ -138,3 +192,9 @@ form.addEventListener('submit', async (event) => {
 });
 
 document.querySelector('#current-year').textContent = new Date().getFullYear();
+
+// First-time visitors see the existing form after the page paints; prior dismissal or signup is respected.
+window.setTimeout(() => {
+  if (!hasJoinedWaitlist() && !hasDismissedThisSession() && !modal.open) openModal();
+  else updateWaitlistButton();
+}, 250);
