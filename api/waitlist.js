@@ -1,5 +1,6 @@
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const APPS_SCRIPT_HOST = 'script.google.com';
+const APPS_SCRIPT_TIMEOUT_MS = 30000;
 const ALLOWED_SLEEP_NEEDS = new Set([
   'Wake up with neck or shoulder discomfort',
   'Not satisfied with the current pillow',
@@ -33,6 +34,7 @@ module.exports = async function handler(request, response) {
 
   const scriptUrl = process.env.APPS_SCRIPT_URL;
   const scriptSecret = process.env.APPS_SCRIPT_SECRET;
+  const startedAt = Date.now();
 
   if (!scriptUrl || !scriptSecret) {
     return response.status(500).json({ error: 'The waitlist is not configured yet.' });
@@ -55,7 +57,8 @@ module.exports = async function handler(request, response) {
         secret: scriptSecret,
       }),
       redirect: 'follow',
-      signal: AbortSignal.timeout(10000),
+      // Apps Script can queue concurrent spreadsheet writes, especially during event traffic.
+      signal: AbortSignal.timeout(APPS_SCRIPT_TIMEOUT_MS),
     });
 
     if (!scriptResponse.ok) throw new Error(`Apps Script returned ${scriptResponse.status}`);
@@ -63,9 +66,13 @@ module.exports = async function handler(request, response) {
     const result = JSON.parse(await scriptResponse.text());
     if (!result.success) throw new Error(result.error || 'Apps Script rejected the submission');
 
+    console.info('Waitlist submission succeeded:', { durationMs: Date.now() - startedAt });
     return response.status(200).json({ success: true });
   } catch (error) {
-    console.error('Waitlist submission failed:', error?.code || error?.message || 'Unknown error');
+    console.error('Waitlist submission failed:', {
+      reason: error?.code || error?.name || error?.message || 'Unknown error',
+      durationMs: Date.now() - startedAt,
+    });
     return response.status(500).json({ error: 'We couldn’t add you right now. Please try again.' });
   }
 };
